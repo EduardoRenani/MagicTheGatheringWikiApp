@@ -1,0 +1,2 @@
+# hearthstoneWikiApp
+https://hearthstoneapi.com
