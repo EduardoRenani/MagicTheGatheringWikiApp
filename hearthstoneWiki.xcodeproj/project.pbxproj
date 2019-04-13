@@ -13,6 +13,7 @@
 		198FF225226128BD00F638F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 198FF224226128BD00F638F1 /* Assets.xcassets */; };
 		198FF228226128BD00F638F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 198FF226226128BD00F638F1 /* LaunchScreen.storyboard */; };
 		E7FC496722629D6500ADDF31 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC496622629D6500ADDF31 /* DataRequest.swift */; };
+		E7FC49692262A40C00ADDF31 /* cardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC49682262A40C00ADDF31 /* cardsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		198FF227226128BD00F638F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		198FF229226128BD00F638F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7FC496622629D6500ADDF31 /* DataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		E7FC49682262A40C00ADDF31 /* cardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		198FF21C226128BC00F638F1 /* hearthstoneWiki */ = {
 			isa = PBXGroup;
 			children = (
+				E7FC49682262A40C00ADDF31 /* cardsTableViewCell.swift */,
 				E7FC496622629D6500ADDF31 /* DataRequest.swift */,
 				198FF21D226128BC00F638F1 /* AppDelegate.swift */,
 				198FF21F226128BC00F638F1 /* ViewController.swift */,
@@ -141,6 +144,7 @@
 				E7FC496722629D6500ADDF31 /* DataRequest.swift in Sources */,
 				198FF220226128BC00F638F1 /* ViewController.swift in Sources */,
 				198FF21E226128BC00F638F1 /* AppDelegate.swift in Sources */,
+				E7FC49692262A40C00ADDF31 /* cardsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
