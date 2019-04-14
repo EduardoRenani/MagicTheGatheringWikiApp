@@ -67,49 +67,38 @@
                                                     <rect key="frame" x="20" y="16" width="374" height="178"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RY7-B9-8mK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="178"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6h9-Bv-eTe" userLabel="cardImage">
+                                                            <rect key="frame" x="0.0" y="0.0" width="131" height="178"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RY7-B9-8mK">
+                                                            <rect key="frame" x="174" y="0.0" width="200" height="178"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="26.5" text="cardName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tq0-5y-zSe">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="26.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="52.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="20.5" text="cardRarity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-X8-Shg">
-                                                                    <rect key="frame" x="0.0" y="36.5" width="200" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="62.5" width="200" height="53"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="20.5" text="cardType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVf-iX-6bz">
-                                                                    <rect key="frame" x="0.0" y="67" width="200" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="125.5" width="200" height="52.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="20.5" text="cardBio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCP-b4-Z3s" userLabel="cardBio">
-                                                                    <rect key="frame" x="0.0" y="97.5" width="200" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJe-bJ-2Sj" userLabel="cardManaCost">
-                                                                    <rect key="frame" x="0.0" y="128" width="101" height="50"/>
-                                                                </imageView>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6h9-Bv-eTe" userLabel="cardImage">
-                                                            <rect key="frame" x="243" y="0.0" width="131" height="178"/>
-                                                        </imageView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cardBioLabel" destination="GCP-b4-Z3s" id="DW3-l7-MbA"/>
                                             <outlet property="cardImageView" destination="6h9-Bv-eTe" id="8Db-cT-3We"/>
-                                            <outlet property="cardManaCountImageView" destination="LJe-bJ-2Sj" id="XLj-3j-SdV"/>
                                             <outlet property="cardNameLabel" destination="tq0-5y-zSe" id="H1R-Mj-BsN"/>
                                             <outlet property="cardRarityLabel" destination="DMt-X8-Shg" id="feR-oK-mcj"/>
                                             <outlet property="cardTypeLabel" destination="pVf-iX-6bz" id="laU-N6-0Bh"/>
