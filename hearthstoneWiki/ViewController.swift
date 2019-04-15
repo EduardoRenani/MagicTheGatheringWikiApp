@@ -42,17 +42,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cardCellIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cardCellIdentifier, for: indexPath) as? cardsTableViewCell else {return UITableViewCell()}
         
         let card = cards[indexPath.row]
 
-        cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = card.rarity
-        
-        //print(card.name)
-        //print(card.rarity)
-        //print(card.imagePath)
-        //print(card.colors)
+        cell.cardNameLabel.text = card.name
+        cell.cardRarityLabel.text = card.rarity
+        cell.cardTypeLabel.text = card.type
+        cell.cardImageView.image(fromUrl: card.imagePath)
         return cell
     }
     
@@ -60,3 +57,23 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+
+extension UIImageView {
+    public func image(fromUrl urlString: String) {
+        guard let url = URL(string: urlString) else {
+            print("adaw")
+            return
+        }
+        let theTask = URLSession.shared.dataTask(with: url) {
+            data, response, error in
+            if let response = data {
+                DispatchQueue.main.async {
+                    self.image = UIImage(data: response)
+                }
+            }
+        }
+        theTask.resume()
+    }
+}
+

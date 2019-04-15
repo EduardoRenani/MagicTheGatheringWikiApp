@@ -13,8 +13,6 @@ class cardsTableViewCell: UITableViewCell {
     @IBOutlet weak var cardNameLabel: UILabel!
     @IBOutlet weak var cardRarityLabel: UILabel!
     @IBOutlet weak var cardTypeLabel: UILabel!
-    @IBOutlet weak var cardBioLabel: UILabel!
-    @IBOutlet weak var cardManaCountImageView: UIImageView!
     @IBOutlet weak var cardImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

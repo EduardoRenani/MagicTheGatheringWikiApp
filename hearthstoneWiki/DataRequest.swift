@@ -11,27 +11,27 @@ import Foundation
 
 struct Card {
     let name: String
-//    let colors: [String]
+    let type: String
 //    let cost: Int
     let rarity: String
-//    let imagePath: URL
+    let imagePath: String
     
     init?(fromDictionary dictionary: [String: Any]) {
         guard
             let name = dictionary["name"] as? String,
             //let colors = dictionary["colors"] as? [String],
-            //let cost = dictionary["cmc"] as? Int,
-            let rarity = dictionary["rarity"] as? String
-            //let imageURL = dictionary["imageUrl"] as? String,
-            //let imagePath = URL(string: imageURL)
+            let type = dictionary["type_line"] as? String,
+            let rarity = dictionary["rarity"] as? String,
+            let imageURL = dictionary["image_uris"] as? [String: String],
+            let imagePath = imageURL["small"]
         else{
             return nil
         }
         self.name = name
         //self.colors = colors
-        //self.cost = cost
+        self.type = type
         self.rarity = rarity
-        //self.imagePath = imagePath
+        self.imagePath = imagePath
     }
     
 }
