@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        DataService.getCardsByColor(cardColor: "white") { (cards) in
+        DataService.getCardsByColor(cardColor: "w") { (cards) in
             self.cards = cards ?? []
             
             DispatchQueue.main.async {
@@ -47,12 +47,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let card = cards[indexPath.row]
 
         cell.textLabel?.text = card.name
-        cell.detailTextLabel?.text = card.rarity
+        //cell.detailTextLabel?.text = card.rarity
         
-        print(card.name)
-        print(card.rarity)
-        print(card.imagePath)
-        print(card.colors)
+        //print(card.name)
+        //print(card.rarity)
+        //print(card.imagePath)
+        //print(card.colors)
         return cell
     }
     
