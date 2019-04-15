@@ -1,2 +1,2 @@
-# hearthstoneWikiApp
-https://hearthstoneapi.com
+# MagicTheGatheringApp
+https://magicthegathering.io
