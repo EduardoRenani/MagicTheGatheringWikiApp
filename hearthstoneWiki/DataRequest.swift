@@ -50,7 +50,7 @@ struct DataService {
             completion(nil)
             return
         }
-        print(cardsEndpoint)
+
         let urlSession = URLSession.shared
         
         _ = urlSession.dataTask(with: cardsEndpoint) { (data, response, error) in
@@ -85,5 +85,3 @@ struct DataService {
     
 }
 
-//TODO: mexer com os gets paginados e criar paginas do tamanho do numero de celulas da table view:
-//https://api.magicthegathering.io/v1/cards?colors=white&page=08&pageSize=10"

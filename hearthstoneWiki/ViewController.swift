@@ -47,7 +47,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let card = cards[indexPath.row]
 
         cell.textLabel?.text = card.name
-        //cell.detailTextLabel?.text = card.rarity
+        cell.detailTextLabel?.text = card.rarity
         
         //print(card.name)
         //print(card.rarity)
