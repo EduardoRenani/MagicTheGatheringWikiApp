@@ -50,9 +50,6 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="26.5" text="cardName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tq0-5y-zSe">
                                                                     <rect key="frame" x="0.0" y="0.0" width="222" height="59.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="127" id="0GU-4A-TLR"/>
-                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -67,7 +64,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="20.5" text="cardRarity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-X8-Shg">
                                                                             <rect key="frame" x="0.0" y="0.0" width="222" height="59.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -100,22 +97,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magic" translatesAutoresizingMaskIntoConstraints="NO" id="enz-hL-BCP">
+                                <rect key="frame" x="0.0" y="-140" width="414" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="yDc-ft-6GJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wHd-8l-xo6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9o1-lt-fCo"/>
+                            <constraint firstAttribute="trailing" secondItem="enz-hL-BCP" secondAttribute="trailing" id="EGc-TO-zND"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wHd-8l-xo6" secondAttribute="bottom" id="F80-bg-cDM"/>
                             <constraint firstItem="wHd-8l-xo6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GkP-pc-UqD"/>
                             <constraint firstItem="3SI-yJ-uRg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ILi-0Y-8Kx"/>
+                            <constraint firstItem="enz-hL-BCP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TnV-Yf-PIJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3SI-yJ-uRg" secondAttribute="trailing" id="WAu-QJ-MyV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3SI-yJ-uRg" secondAttribute="bottom" id="WHx-FR-2L9"/>
                             <constraint firstItem="3SI-yJ-uRg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WJq-P1-Lmg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wHd-8l-xo6" secondAttribute="trailing" id="acu-xS-pdk"/>
+                            <constraint firstItem="enz-hL-BCP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-140" id="deP-WY-0Ye"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="9To-QR-Zye"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navBar" destination="9To-QR-Zye" id="Q9l-Xt-SgX"/>
                         <outlet property="tableView" destination="3SI-yJ-uRg" id="g4e-gn-JOr"/>
                     </connections>
                 </viewController>
@@ -129,12 +137,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dM9-eS-ryn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cards" id="WgB-Dt-Gdd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" backIndicatorImage="magic" largeTitles="YES" backIndicatorTransitionMaskImage="magic" id="3Nx-tS-dln">
+                    <navigationBar key="navigationBar" opaque="NO" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="3Nx-tS-dln">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -151,6 +159,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="emB-LC-1dB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v0J-Rf-3Sy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -164,7 +173,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="magic" width="1600" height="900"/>
+        <image name="magic" width="620" height="210"/>
         <image name="magicbg" width="552" height="897"/>
     </resources>
 </document>
