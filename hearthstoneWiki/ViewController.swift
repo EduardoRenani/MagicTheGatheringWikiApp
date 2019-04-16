@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var navBar: UINavigationItem!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,7 +33,13 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        let logoContainer = UIView(frame: CGRect(x: 0, y: -5, width: 300, height: 90))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: -5, width: 300, height: 90))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "magic")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        self.navBar.titleView = logoContainer
     }
 }
 
