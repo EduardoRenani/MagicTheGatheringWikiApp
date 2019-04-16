@@ -27,7 +27,7 @@
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardIdentifier" rowHeight="200" id="rm8-XL-Ia1" customClass="cardsTableViewCell" customModule="hearthstoneWiki" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cardIdentifier" rowHeight="200" id="rm8-XL-Ia1" customClass="cardsTableViewCell" customModule="hearthstoneWiki" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rm8-XL-Ia1" id="xHC-Q1-i2c">
@@ -102,6 +102,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="yDc-ft-6GJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,16 +123,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9To-QR-Zye"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="9To-QR-Zye"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navBar" destination="9To-QR-Zye" id="Q9l-Xt-SgX"/>
                         <outlet property="tableView" destination="3SI-yJ-uRg" id="g4e-gn-JOr"/>
+                        <segue destination="bp8-7a-0SH" kind="presentation" identifier="showDetails" id="6ps-iF-nqb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308.69565217391306" y="26.785714285714285"/>
+            <point key="canvasLocation" x="99" y="-48"/>
+        </scene>
+        <!--detailScene-->
+        <scene sceneID="uyY-eY-NbF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="detailScene" id="TsA-G7-dEK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDj-UQ-pbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="243"/>
         </scene>
         <!--Cards-->
         <scene sceneID="NkK-fq-WC9">
@@ -137,7 +149,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dM9-eS-ryn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cards" id="WgB-Dt-Gdd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="3Nx-tS-dln">
+                    <navigationBar key="navigationBar" opaque="NO" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" barStyle="black" translucent="NO" largeTitles="YES" id="3Nx-tS-dln">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,7 +163,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLE-a3-Twz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-544.92753623188412" y="27.455357142857142"/>
+            <point key="canvasLocation" x="-651" y="-60"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ORm-qZ-ZMS">
@@ -170,6 +182,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOC-SD-YpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1455.072463768116" y="27.455357142857142"/>
+        </scene>
+        <!--Detail Scene View Controller-->
+        <scene sceneID="nxF-QW-AWZ">
+            <objects>
+                <viewController id="bp8-7a-0SH" customClass="DetailSceneViewController" customModule="hearthstoneWiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oez-N5-TCN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magicbg" translatesAutoresizingMaskIntoConstraints="NO" id="L06-Ps-72k">
+                                <rect key="frame" x="0.0" y="-35" width="414" height="897"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="81f-lU-5Ix">
+                                <rect key="frame" x="0.0" y="94" width="414" height="617"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-jc-nZB">
+                                        <rect key="frame" x="40" y="0.0" width="334" height="617"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qvW-jc-nZB" firstAttribute="leading" secondItem="81f-lU-5Ix" secondAttribute="leading" constant="40" id="3R7-6R-PLa"/>
+                                    <constraint firstAttribute="trailing" secondItem="qvW-jc-nZB" secondAttribute="trailing" constant="40" id="eAB-5i-Hq4"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcv-Mg-s0j">
+                                <rect key="frame" x="26" y="44" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="dismissAction:" destination="bp8-7a-0SH" eventType="touchUpInside" id="lQI-hW-b30"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="81f-lU-5Ix" firstAttribute="top" secondItem="1RN-1x-teV" secondAttribute="top" constant="50" id="7S0-ST-kJX"/>
+                            <constraint firstItem="L06-Ps-72k" firstAttribute="leading" secondItem="1RN-1x-teV" secondAttribute="leading" id="H31-kX-YWm"/>
+                            <constraint firstItem="1RN-1x-teV" firstAttribute="trailing" secondItem="L06-Ps-72k" secondAttribute="trailing" id="Wk5-Ri-qGg"/>
+                            <constraint firstItem="1RN-1x-teV" firstAttribute="trailing" secondItem="81f-lU-5Ix" secondAttribute="trailing" id="Xua-iR-4B2"/>
+                            <constraint firstItem="1RN-1x-teV" firstAttribute="bottom" secondItem="L06-Ps-72k" secondAttribute="bottom" id="ens-Nf-sMP"/>
+                            <constraint firstItem="1RN-1x-teV" firstAttribute="bottom" secondItem="81f-lU-5Ix" secondAttribute="bottom" constant="151" id="mvA-g2-99M"/>
+                            <constraint firstItem="81f-lU-5Ix" firstAttribute="leading" secondItem="1RN-1x-teV" secondAttribute="leading" id="uPe-GL-sKC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1RN-1x-teV"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="qvW-jc-nZB" id="4dl-oN-AGG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0L-7W-4M2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="-331"/>
         </scene>
     </scenes>
     <resources>

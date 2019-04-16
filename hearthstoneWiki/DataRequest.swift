@@ -14,7 +14,8 @@ struct Card {
     let type: String
 //    let cost: Int
     let rarity: String
-    let imagePath: String
+    let imagePathSmall: String
+    let imagePathBig: String
     
     init?(fromDictionary dictionary: [String: Any]) {
         guard
@@ -23,7 +24,8 @@ struct Card {
             let type = dictionary["type_line"] as? String,
             let rarity = dictionary["rarity"] as? String,
             let imageURL = dictionary["image_uris"] as? [String: String],
-            let imagePath = imageURL["small"]
+            let imagePathSmall = imageURL["border_crop"],
+            let imagePathBig = imageURL["border_crop"]
         else{
             return nil
         }
@@ -31,7 +33,8 @@ struct Card {
         //self.colors = colors
         self.type = type
         self.rarity = rarity
-        self.imagePath = imagePath
+        self.imagePathSmall = imagePathSmall
+        self.imagePathBig = imagePathBig
     }
     
 }

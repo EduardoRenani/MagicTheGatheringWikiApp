@@ -18,12 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="magicbg" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-el-d4y">
-                                <rect key="frame" x="-56" y="44" width="527" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magicbg" translatesAutoresizingMaskIntoConstraints="NO" id="rOd-el-d4y">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="rOd-el-d4y" secondAttribute="bottom" id="GEg-Ky-Gad"/>
+                            <constraint firstItem="rOd-el-d4y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TKm-aX-vHd"/>
+                            <constraint firstItem="rOd-el-d4y" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="l75-vF-pyW"/>
+                            <constraint firstItem="rOd-el-d4y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="of5-1B-mHd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

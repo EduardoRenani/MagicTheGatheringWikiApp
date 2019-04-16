@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         let image = UIImage(named: "magic")
         imageView.image = image
         logoContainer.addSubview(imageView)
+        self.navBar.titleView?.removeFromSuperview()
         self.navBar.titleView = logoContainer
     }
 }
@@ -61,7 +62,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.cardNameLabel.text = card.name
         cell.cardRarityLabel.text = card.rarity
         cell.cardTypeLabel.text = card.type
-        cell.cardImageView.image(fromUrl: card.imagePath)
+        cell.cardImageView.image(fromUrl: card.imagePathSmall)
+        cell.card = card
         
         switch card.rarity {
         case "common":
@@ -79,8 +81,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let param = sender as? Card
+            guard let nextViewController = segue.destination as? DetailSceneViewController else {fatalError()}
+            nextViewController.card = param
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt : IndexPath) {
+        let cell = tableView.cellForRow(at: didSelectRowAt) as? cardsTableViewCell
+        let cardData = cell?.card
+        performSegue(withIdentifier: "showDetails", sender: cardData)
     }
 }
 
