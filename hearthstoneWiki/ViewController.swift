@@ -6,6 +6,7 @@
 //  Copyright © 2019 Eduardo Ribeiro. All rights reserved.
 //
 
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -29,6 +30,10 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
 }
 
 // MARK: - TableView DataSource
@@ -50,6 +55,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.cardRarityLabel.text = card.rarity
         cell.cardTypeLabel.text = card.type
         cell.cardImageView.image(fromUrl: card.imagePath)
+        
+        switch card.rarity {
+        case "common":
+            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 33/255, green: 33/255, blue: 33/255, alpha: 255/255)
+        case "uncommon":
+            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 270/255, alpha: 255/255)
+        case "rare":
+            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 230/255, green: 205/255, blue: 140/255, alpha: 255/255)
+        case "mythic":
+            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 245/255, green: 145/255, blue: 5/255, alpha: 255/255)
+        default:
+           cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 270/255, alpha: 255/255)
+        }
+        
         return cell
     }
     
@@ -62,7 +81,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension UIImageView {
     public func image(fromUrl urlString: String) {
         guard let url = URL(string: urlString) else {
-            print("adaw")
             return
         }
         let theTask = URLSession.shared.dataTask(with: url) {

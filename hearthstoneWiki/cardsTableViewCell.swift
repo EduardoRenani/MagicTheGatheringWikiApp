@@ -10,6 +10,7 @@ import UIKit
 
 class cardsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rarityImageView: UIImageView!
     @IBOutlet weak var cardNameLabel: UILabel!
     @IBOutlet weak var cardRarityLabel: UILabel!
     @IBOutlet weak var cardTypeLabel: UILabel!
