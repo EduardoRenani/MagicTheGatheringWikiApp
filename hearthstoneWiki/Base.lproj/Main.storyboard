@@ -327,10 +327,9 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IwA-XP-vZl">
                                                                     <rect key="frame" x="0.0" y="118.5" width="222" height="59.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="20.5" text="cardRarity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVD-hn-3Mk">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="20.5" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVD-hn-3Mk">
                                                                             <rect key="frame" x="0.0" y="0.0" width="222" height="59.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -367,7 +366,7 @@
                                             <outlet property="cardImageRarity" destination="Sef-5M-sCk" id="gQm-wv-I2J"/>
                                             <outlet property="cardImageView" destination="9Iv-2I-SPo" id="e5T-gW-52a"/>
                                             <outlet property="cardNameLabel" destination="pvh-xL-QHo" id="2Qm-Nf-Wxd"/>
-                                            <outlet property="cardRarityLabel" destination="CVD-hn-3Mk" id="6e6-wS-l51"/>
+                                            <outlet property="cardNumberOfCopies" destination="CVD-hn-3Mk" id="6e6-wS-l51"/>
                                             <outlet property="cardTypeLabel" destination="HG1-Ap-wZh" id="BFp-XW-FlV"/>
                                         </connections>
                                     </tableViewCell>

@@ -80,6 +80,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
         let card = cards[indexPath.row]
 
         cell.cardNameLabel.text = card.name
+        cell.cardNameLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         cell.cardRarityLabel.text = card.rarity
         cell.cardTypeLabel.text = card.type
         cell.cardImageView.image(fromUrl: card.imagePathSmall)

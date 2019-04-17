@@ -73,10 +73,11 @@ extension DeckViewController: UITableViewDataSource, UITableViewDelegate {
         let card = cards[indexPath.row]
         
         cell.cardNameLabel.text = card.name
-        cell.cardRarityLabel.text = card.rarity
+        cell.cardNameLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
+        cell.cardNumberOfCopies.text = card.rarity
         cell.cardTypeLabel.text = card.type
         cell.cardImageView.image(fromUrl: card.imagePathSmall)
-        //cell.numberOfCopies.text = "\(card.numberOfCopies)x"
+        cell.cardNumberOfCopies.text = "\(card.numberOfCopies)x"
         cell.card = card
         
         switch card.rarity {
