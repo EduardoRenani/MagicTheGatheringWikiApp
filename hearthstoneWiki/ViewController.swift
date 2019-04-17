@@ -78,6 +78,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
         return cards.count
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let addToDeck = UITableViewRowAction(style: .default, title: "Add") { (action, indexpath) in
+            print("Delete Action Tapped")
+        }
+        addToDeck.backgroundColor = UIColor(displayP3Red: 239/255, green: 143/255, blue: 40/255, alpha: 255/255)
+        
+        return [addToDeck]
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cardCellIdentifier, for: indexPath) as? cardsTableViewCell else {return UITableViewCell()}
         
@@ -93,13 +102,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
         case "common":
             cell.cardRarityLabel.textColor = UIColor(displayP3Red: 33/255, green: 33/255, blue: 33/255, alpha: 255/255)
         case "uncommon":
-            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 270/255, alpha: 255/255)
+            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 235/255, alpha: 255/255)
         case "rare":
             cell.cardRarityLabel.textColor = UIColor(displayP3Red: 230/255, green: 205/255, blue: 140/255, alpha: 255/255)
         case "mythic":
             cell.cardRarityLabel.textColor = UIColor(displayP3Red: 245/255, green: 145/255, blue: 5/255, alpha: 255/255)
         default:
-           cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 270/255, alpha: 255/255)
+           cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 235/255, alpha: 255/255)
         }
         
         return cell
