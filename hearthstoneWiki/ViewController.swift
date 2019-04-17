@@ -70,8 +70,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
             let cardData = cell?.card
             Decklist.standard.insertCard(card: cardData!)
         }
-        addToDeck.backgroundColor = UIColor(displayP3Red: 239/255, green: 143/255, blue: 40/255, alpha: 255/255)
-        
+        addToDeck.backgroundColor = .green
         return [addToDeck]
     }
     
@@ -88,15 +87,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
         
         switch card.rarity {
         case "common":
-            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 33/255, green: 33/255, blue: 33/255, alpha: 255/255)
+            cell.cardImageRarity.image = UIImage(named: "logo-black")
         case "uncommon":
-            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 235/255, alpha: 255/255)
+            cell.cardImageRarity.image = UIImage(named: "logo-blue")
         case "rare":
-            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 230/255, green: 205/255, blue: 140/255, alpha: 255/255)
+            cell.cardImageRarity.image = UIImage(named: "logo-yellow")
         case "mythic":
-            cell.cardRarityLabel.textColor = UIColor(displayP3Red: 245/255, green: 145/255, blue: 5/255, alpha: 255/255)
+            cell.cardImageRarity.image = UIImage(named: "logo_orange")
         default:
-           cell.cardRarityLabel.textColor = UIColor(displayP3Red: 185/255, green: 220/255, blue: 235/255, alpha: 255/255)
+            cell.cardImageRarity.image = UIImage(named: "logo-black")
         }
         
         return cell

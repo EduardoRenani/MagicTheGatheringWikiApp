@@ -10,13 +10,14 @@ import Foundation
 
 
 struct Card {
-    let name: String
-    let type: String
-    let cost: Int
-    let rarity: String
-    let imagePathSmall: String
-    let imagePathBig: String
-    let oracleText: String
+    var name: String
+    var type: String
+    var cost: Int
+    var rarity: String
+    var imagePathSmall: String
+    var imagePathBig: String
+    var oracleText: String
+    var numberOfCopies: Int = 0
     
     init?(fromDictionary dictionary: [String: Any]) {
         guard
@@ -38,6 +39,17 @@ struct Card {
         self.rarity = rarity
         self.imagePathSmall = imagePathSmall
         self.imagePathBig = imagePathBig
+    }
+    
+    init?(name: String, type: String, cost: Int, rarity: String, imagePath: String, oracleText: String, numberOfCopies: Int) {
+        self.name = name
+        self.type = type
+        self.cost = cost
+        self.rarity = rarity
+        self.imagePathSmall = imagePath
+        self.imagePathBig = imagePath
+        self.oracleText = oracleText
+        self.numberOfCopies = numberOfCopies
     }
     
 }

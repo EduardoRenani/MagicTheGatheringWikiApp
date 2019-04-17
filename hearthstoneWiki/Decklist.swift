@@ -28,7 +28,7 @@ struct Decklist {
     
     mutating func insertCard(card: Card) {
         guard let _ =  self.list[card.name] else {
-            let newCard = CardCopy(name: card.name, cost: card.cost, oracleText: card.oracleText, rarity: card.rarity, type: card.type, imagePath: card.imagePathSmall, numberOfCopies: 0)
+            let newCard = CardCopy(name: card.name, cost: card.cost, oracleText: card.oracleText, rarity: card.rarity, type: card.type, imagePath: card.imagePathBig, numberOfCopies: 1)
             self.list[card.name] = newCard
             return
         }

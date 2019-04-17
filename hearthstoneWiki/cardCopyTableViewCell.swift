@@ -10,6 +10,15 @@ import UIKit
 
 class cardCopyTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var cardNameLabel: UILabel!
+    @IBOutlet weak var cardTypeLabel: UILabel!
+    @IBOutlet weak var cardRarityLabel: UILabel!
+    @IBOutlet weak var cardImageRarity: UIImageView!
+    @IBOutlet weak var numberOfCopies: UILabel!
+    
+    var card: Card?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
