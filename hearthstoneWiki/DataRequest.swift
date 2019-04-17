@@ -12,17 +12,19 @@ import Foundation
 struct Card {
     let name: String
     let type: String
-//    let cost: Int
+    let cost: Int
     let rarity: String
     let imagePathSmall: String
     let imagePathBig: String
+    let oracleText: String
     
     init?(fromDictionary dictionary: [String: Any]) {
         guard
             let name = dictionary["name"] as? String,
-            //let colors = dictionary["colors"] as? [String],
+            let cost = dictionary["cmc"] as? Int,
             let type = dictionary["type_line"] as? String,
             let rarity = dictionary["rarity"] as? String,
+            let oracleText = dictionary["oracle_text"] as? String,
             let imageURL = dictionary["image_uris"] as? [String: String],
             let imagePathSmall = imageURL["border_crop"],
             let imagePathBig = imageURL["border_crop"]
@@ -30,7 +32,8 @@ struct Card {
             return nil
         }
         self.name = name
-        //self.colors = colors
+        self.cost = cost
+        self.oracleText = oracleText
         self.type = type
         self.rarity = rarity
         self.imagePathSmall = imagePathSmall

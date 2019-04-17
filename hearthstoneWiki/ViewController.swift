@@ -50,24 +50,10 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        DataService.getCardsByName(cardName: searchText) {
-//            (cards) in
-//            print(searchText)
-//            self.cards = cards ?? []
-//            print(cards)
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         DataService.getCardsByName(cardName: searchBar.text ?? "") {
             (cards) in
-            //print(searchBar.text)
             self.cards = cards ?? []
-            print(cards)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -80,7 +66,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let addToDeck = UITableViewRowAction(style: .default, title: "Add") { (action, indexpath) in
-            print("Delete Action Tapped")
+            let cell = tableView.cellForRow(at: indexPath) as? cardsTableViewCell
+            let cardData = cell?.card
+            Decklist.standard.insertCard(card: cardData!)
         }
         addToDeck.backgroundColor = UIColor(displayP3Red: 239/255, green: 143/255, blue: 40/255, alpha: 255/255)
         
