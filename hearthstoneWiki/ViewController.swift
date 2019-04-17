@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var navBar: UINavigationItem!
     
     @IBOutlet weak var tableView: UITableView!
@@ -23,9 +24,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        DataService.getCardsByColor(cardColor: "w") { (cards) in
+        searchBar.delegate = self
+        DataService.getAllCards() { (cards) in
             self.cards = cards ?? []
-            
+            print(self.cards)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -46,9 +48,31 @@ class ViewController: UIViewController {
 
 // MARK: - TableView DataSource
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
-
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        DataService.getCardsByName(cardName: searchText) {
+//            (cards) in
+//            print(searchText)
+//            self.cards = cards ?? []
+//            print(cards)
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        DataService.getCardsByName(cardName: searchBar.text ?? "") {
+            (cards) in
+            //print(searchBar.text)
+            self.cards = cards ?? []
+            print(cards)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
@@ -94,6 +118,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cardData = cell?.card
         performSegue(withIdentifier: "showDetails", sender: cardData)
     }
+    
 }
 
 

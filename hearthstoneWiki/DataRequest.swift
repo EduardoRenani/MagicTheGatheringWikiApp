@@ -46,14 +46,14 @@ struct DataService {
     private static var cardsByColorEndpoint: URL? {
         return URL(string: "\(endpointPath)/cards/search?q=c:")
     }
+
     
-    static func getCardsByColor(cardColor: String, completionHandler completion: @escaping ([Card]?) -> Void) {
-        let _cardsEndpoint = cardsByColorEndpoint
-        guard let cardsEndpoint = _cardsEndpoint?.appendingPathExtension(String(cardColor.prefix(0))) else {
+    static func getCardsByName(cardName: String, completionHandler completion: @escaping ([Card]?) -> Void) {
+        guard let cardsEndpoint = URL(string: "\(endpointPath)/cards/search?q=name:\(cardName)") else {
             completion(nil)
             return
         }
-
+        print(cardsEndpoint)
         let urlSession = URLSession.shared
         
         _ = urlSession.dataTask(with: cardsEndpoint) { (data, response, error) in
@@ -85,6 +85,43 @@ struct DataService {
         }.resume()
         
     }
+    
+    static func getAllCards(completionHandler completion: @escaping ([Card]?) -> Void) {
+        guard let cardsEndpoint = URL(string: "\(endpointPath)/cards") else{fatalError()}
+        
+        let urlSession = URLSession.shared
+        
+        _ = urlSession.dataTask(with: cardsEndpoint) { (data, response, error) in
+            guard
+                let error = error
+                else {
+                    guard
+                        let unwrappedData = data,
+                        let dataJson = try? JSONSerialization.jsonObject(with: unwrappedData, options: JSONSerialization.ReadingOptions.allowFragments),
+                        let json = dataJson as? [String: Any],
+                        let resData = json["data"] as? [[String:Any]]
+                        else {
+                            print(response.debugDescription)
+                            completion(nil)
+                            return
+                    }
+                    
+                    let cards = resData.compactMap( {
+                        Card(fromDictionary: $0)
+                    })
+                    completion(cards)
+                    return
+                    
+            }
+            
+            print(error.localizedDescription)
+            completion(nil)
+            return
+            
+            }.resume()
+        
+    }
+
     
 }
 

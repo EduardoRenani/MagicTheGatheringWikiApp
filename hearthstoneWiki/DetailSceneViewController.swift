@@ -10,11 +10,12 @@ import UIKit
 
 class DetailSceneViewController: UIViewController {
 
-    @IBAction func dismissAction(_ sender: UIButton) {
-        self.dismiss(animated: true) {
+    @IBAction func dismissAction(_ sender: Any) {
+        dismiss(animated: true) {
             return
         }
     }
+    
     //@IBOutlet weak var cardRarityLabel: UILabel!
     //@IBOutlet weak var cardNameLabel: UILabel!
     @IBOutlet weak var cardImageView: UIImageView!
